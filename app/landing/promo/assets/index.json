@@ -1,0 +1,86 @@
+{
+  "title": "Nebachiv Marketing Assets Index",
+  "description": "Central index for all marketing assets and testimonials",
+  "version": "1.0.0",
+  "created": "2025-01-13",
+  "assets": {
+    "testimonials": {
+      "hero": {
+        "path": "./testimonials/hero-testimonials.json",
+        "description": "Top 5 life-saving testimonials for hero sections",
+        "count": 5,
+        "priority": "highest"
+      },
+      "transformations": {
+        "path": "./testimonials/transformations.json",
+        "description": "Personal growth and skill development stories",
+        "count": 6,
+        "priority": "high"
+      },
+      "expert_validation": {
+        "path": "./testimonials/expert-validation.json",
+        "description": "Professional endorsements and expert testimonials",
+        "count": 6,
+        "priority": "high"
+      },
+      "family_impact": {
+        "path": "./testimonials/family-impact.json",
+        "description": "Stories showing impact on families and community",
+        "count": 6,
+        "priority": "high"
+      },
+      "categories": {
+        "path": "./testimonials/categories.json",
+        "description": "Complete categorization system for all testimonials",
+        "categories": 10,
+        "priority": "reference"
+      }
+    },
+    "social_proof": {
+      "statistics": {
+        "path": "./social-proof/statistics.json",
+        "description": "Quantifiable metrics and impact numbers",
+        "priority": "high"
+      }
+    },
+    "content": {
+      "hero_messages": {
+        "path": "./content/hero-messages.json",
+        "description": "Core value propositions and hero section content",
+        "priority": "highest"
+      },
+      "features": {
+        "path": "./content/features.json",
+        "description": "Unique features and methodology",
+        "priority": "high"
+      },
+      "ukrainian_pride": {
+        "path": "./content/ukrainian-pride.json",
+        "description": "Ukrainian language focus and cultural impact",
+        "priority": "high"
+      }
+    }
+  },
+  "quick_stats": {
+    "total_testimonials_analyzed": 750,
+    "selected_for_marketing": 50,
+    "life_saving_stories": 5,
+    "top_testimonial_likes": 489,
+    "languages": ["Ukrainian", "English translations"],
+    "platforms": ["YouTube", "Instagram", "Telegram"],
+    "key_tagline": "Nebachiv — школа мотожиття"
+  },
+  "usage_guide": {
+    "for_developers": "Import individual JSON files as needed for components",
+    "for_marketers": "Use categorized testimonials for targeted campaigns",
+    "for_designers": "Reference hero messages and features for layouts",
+    "for_copywriters": "Use testimonials and value props for copy"
+  },
+  "best_practices": {
+    "testimonial_rotation": "Rotate testimonials based on user segment",
+    "language_selection": "Use Ukrainian for local, English for international",
+    "emotional_appeal": "Lead with life-saving stories for maximum impact",
+    "social_proof": "Always include likes/engagement numbers",
+    "authenticity": "Keep original wording and emotions"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "title": "Hero Messages & Value Propositions",
+  "description": "Core messaging for landing page hero sections and key marketing materials",
+  "primary_hero": {
+    "headline_ua": "Інформація, яка рятує життя",
+    "headline_en": "Information That Saves Lives",
+    "subheadline_ua": "Найкращий контент на мотоциклетну тему українською",
+    "subheadline_en": "The Best Motorcycle Safety Content in Ukrainian",
+    "cta_primary": {
+      "text_ua": "Почати навчання",
+      "text_en": "Start Learning",
+      "action": "scroll_to_courses"
+    },
+    "cta_secondary": {
+      "text_ua": "Дивитись відгуки",
+      "text_en": "Read Testimonials",
+      "action": "scroll_to_testimonials"
+    }
+  },
+  "value_propositions": {
+    "life_saving": {
+      "icon": "🛡️",
+      "title_ua": "Врятовані життя",
+      "title_en": "Lives Saved",
+      "description_ua": "Реальні історії райдерів, які уникнули аварій завдяки нашим технікам",
+      "description_en": "Real stories of riders who avoided accidents thanks to our techniques",
+      "proof": "3+ documented life-saving cases"
+    },
+    "professional_quality": {
+      "icon": "🎓",
+      "title_ua": "Професійна якість",
+      "title_en": "Professional Quality",
+      "description_ua": "Контент, який рекомендують інструктори мотошкіл",
+      "description_en": "Content recommended by motorcycle school instructors",
+      "proof": "8+ professional endorsements"
+    },
+    "free_education": {
+      "icon": "💝",
+      "title_ua": "Безкоштовне навчання",
+      "title_en": "Free Education",
+      "description_ua": "Професійний рівень освіти без жодних платежів",
+      "description_en": "Professional-level education at no cost",
+      "proof": "100% free, no hidden fees"
+    },
+    "ukrainian_first": {
+      "icon": "🇺🇦",
+      "title_ua": "Українською мовою",
+      "title_en": "In Ukrainian Language",
+      "description_ua": "Перший комплексний навчальний проект українською",
+      "description_en": "First comprehensive educational project in Ukrainian",
+      "proof": "100% Ukrainian content"
+    }
+  },
+  "transformation_promise": {
+    "headline_ua": "Від новачка до впевненого райдера за 3 місяці",
+    "headline_en": "From Beginner to Confident Rider in 3 Months",
+    "steps": [
+      {
+        "week": "1-2",
+        "focus_ua": "Основи безпеки та теорія",
+        "focus_en": "Safety basics and theory"
+      },
+      {
+        "week": "3-4",
+        "focus_ua": "Техніка гальмування",
+        "focus_en": "Braking techniques"
+      },
+      {
+        "week": "5-8",
+        "focus_ua": "Читання дороги та прогнозування",
+        "focus_en": "Road reading and anticipation"
+      },
+      {
+        "week": "9-12",
+        "focus_ua": "Впевнена їзда в різних умовах",
+        "focus_en": "Confident riding in various conditions"
+      }
+    ]
+  },
+  "trust_indicators": {
+    "testimonial_count": "750+ проаналізованих відгуків",
+    "video_library": "22+ навчальних відео",
+    "community_size": "Тисячі райдерів навчаються",
+    "years_experience": "Роки досвіду та аналізу ДТП"
+  },
+  "unique_selling_points": [
+    {
+      "point_ua": "Єдиний проект з детальним аналізом реальних ДТП",
+      "point_en": "The only project with detailed analysis of real accidents"
+    },
+    {
+      "point_ua": "Техніки, які дійсно працюють в критичних ситуаціях",
+      "point_en": "Techniques that actually work in critical situations"
+    },
+    {
+      "point_ua": "Навчання для всіх рівнів - від новачків до ветеранів",
+      "point_en": "Training for all levels - from beginners to veterans"
+    },
+    {
+      "point_ua": "Підтримка спільноти та постійне оновлення",
+      "point_en": "Community support and constant updates"
+    }
+  ],
+  "emotional_hooks": {
+    "fear_to_confidence": {
+      "before_ua": "Страх перед мотоциклом",
+      "before_en": "Fear of motorcycles",
+      "after_ua": "Впевненість на дорозі",
+      "after_en": "Confidence on the road"
+    },
+    "ignorance_to_knowledge": {
+      "before_ua": "Не знаю, як реагувати",
+      "before_en": "Don't know how to react",
+      "after_ua": "Інстинктивні правильні дії",
+      "after_en": "Instinctive correct actions"
+    },
+    "alone_to_community": {
+      "before_ua": "Вчуся сам",
+      "before_en": "Learning alone",
+      "after_ua": "Частина спільноти",
+      "after_en": "Part of community"
+    }
+  },
+  "taglines": [
+    "Nebachiv — школа мотожиття",
+    "Тренить треба - це скіл який рано чи пізно спрацює",
+    "В критичній ситуації навички не піднімаються до очікувань, а падають до рівня тренувань",
+    "Найкращий проект по безпеці в мото"
+  ]
+}

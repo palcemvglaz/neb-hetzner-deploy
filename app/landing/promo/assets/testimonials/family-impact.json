@@ -1,0 +1,128 @@
+{
+  "title": "Family & Community Impact",
+  "description": "How Nebachiv affects families, friends, and the broader community",
+  "testimonials": [
+    {
+      "id": "family-001",
+      "author": "Дмитро Полока",
+      "platform": "YouTube",
+      "category": "parent_concern",
+      "text_ua": "Дякую Вам за таку потужну інфу для байкерів!!!!, особливо для починаючих-я відразу скинув ссилку своєму Сину, щоб він переглянув і прийняв до уваги!!! Дуже дякую!!!",
+      "text_en": "Thank you for such powerful info for bikers!!!!, especially for beginners-I immediately sent the link to my Son, so he would watch and take it into account!!! Thank you very much!!!",
+      "key_points": [
+        "Father sharing with son",
+        "Immediate action taken",
+        "Generational safety concern",
+        "Family protection priority"
+      ],
+      "emotional_impact": "parental_care",
+      "sharing_behavior": "immediate_family_share"
+    },
+    {
+      "id": "family-002",
+      "author": "Володимир К.",
+      "platform": "YouTube",
+      "likes": 342,
+      "category": "spouse_relief",
+      "text_ua": "Дружина плакала від щастя, коли я повернувся додому.",
+      "text_en": "My wife cried with happiness when I returned home.",
+      "key_points": [
+        "Spouse emotional relief",
+        "Family reunion after near-miss",
+        "Emotional family impact",
+        "Life-saving outcome"
+      ],
+      "emotional_impact": "spouse_gratitude",
+      "context": "Part of life-saving testimonial"
+    },
+    {
+      "id": "family-003",
+      "author": "Анонім (жінка, не мотоциклістка)",
+      "platform": "Instagram",
+      "category": "non_rider_engagement",
+      "text_ua": "Я ніколи не водила мотоцикл, і не факт, що воообще буду, ничегошеньки в них не понимаю, но мне чертовски интересно смотреть эти все твои разборы и с живым интересом всматриваться и думать 'ну да, да, тут он конечно херню сделал' 😂😂",
+      "text_en": "I've never ridden a motorcycle, and it's not certain I ever will, I don't understand anything about them, but I'm damn interested in watching all your analyses and looking with keen interest thinking 'well yes, yes, he definitely messed up here' 😂😂",
+      "key_points": [
+        "Non-rider engagement",
+        "Educational entertainment value",
+        "Broader audience appeal",
+        "Safety awareness spreading"
+      ],
+      "emotional_impact": "curiosity_engagement",
+      "audience_expansion": "beyond_riders"
+    },
+    {
+      "id": "family-004",
+      "author": "Мichael Yudkovych",
+      "platform": "YouTube",
+      "likes": 6,
+      "category": "driver_awareness",
+      "text_ua": "Я не мотоцикліст, але дуже цікаво й корисно для інших учасників дорожного руху - дякую! І повага вам, що стараєтеся говорити українською, хоч видно, як важко вам це дається. З часом стане легше, головне - практикуватися. Власне, як і з мотоциклом і з іншими практиками. =)",
+      "text_en": "I'm not a motorcyclist, but it's very interesting and useful for other road users - thank you! And respect to you for trying to speak Ukrainian, though it's visible how difficult it is for you. It will become easier with time, the main thing is to practice. Actually, just like with a motorcycle and other practices. =)",
+      "key_points": [
+        "Car driver learning",
+        "Cross-vehicle safety education",
+        "Language effort appreciation",
+        "Practice philosophy"
+      ],
+      "emotional_impact": "mutual_respect",
+      "community_building": "all_road_users"
+    },
+    {
+      "id": "family-005",
+      "author": "Анонім",
+      "platform": "Telegram",
+      "category": "community_defense",
+      "text_ua": "У Чіна немає мотошколи. І його проект повністю безкоштовний. Він дає ту інфу за яку більшість гребе бабкі. Цікаво які в нього 'багато питань'",
+      "text_en": "Chin doesn't have a motorcycle school. And his project is completely free. He gives the info that most charge money for. Interesting what 'many questions' he has",
+      "key_points": [
+        "Community defending creator",
+        "Free education emphasis",
+        "Value comparison",
+        "Loyalty demonstration"
+      ],
+      "emotional_impact": "community_support",
+      "social_proof": "defender_testimonial"
+    },
+    {
+      "id": "family-006",
+      "author": "Анонім",
+      "platform": "Instagram",
+      "category": "philosophy_sharing",
+      "text_ua": "Я думаю, що це проект про мистецтво. Це як з боєвими мистецтвами, вони наче й не особливо потрібні і практичні для життя, але вони повністю по новому відкривають життя і себе. От так і з їздою, то виявляється мистецтво. І насправді для того і потрібні сенсеї, хіба ні? Щоб я вчилася на чужих помилках",
+      "text_en": "I think this is a project about art. It's like with martial arts, they seem not particularly necessary and practical for life, but they completely open up life and yourself in a new way. So it is with riding, it turns out to be an art. And really that's what senseis are needed for, right? So I can learn from others' mistakes",
+      "key_points": [
+        "Philosophical understanding",
+        "Martial arts comparison",
+        "Sensei role recognition",
+        "Learning from others"
+      ],
+      "emotional_impact": "deep_appreciation",
+      "cultural_connection": "eastern_philosophy"
+    }
+  ],
+  "impact_categories": {
+    "family_safety": {
+      "description": "Parents, spouses, and family members concerned about rider safety",
+      "examples": ["parent_sharing", "spouse_relief", "family_education"]
+    },
+    "community_expansion": {
+      "description": "Impact beyond motorcycle riders to general road users",
+      "examples": ["car_drivers", "cyclists", "pedestrians", "non_riders"]
+    },
+    "social_support": {
+      "description": "Community rallying around the educational mission",
+      "examples": ["defending_creator", "sharing_content", "recommending_others"]
+    },
+    "cultural_impact": {
+      "description": "Deeper philosophical and cultural connections",
+      "examples": ["martial_arts_philosophy", "sensei_student", "life_art"]
+    }
+  },
+  "usage_guidelines": {
+    "emotional_appeals": "Use family testimonials for emotional connection",
+    "broader_audience": "Show impact beyond just riders",
+    "community_proof": "Demonstrate loyal community support",
+    "free_education": "Emphasize accessibility and generosity"
+  }
+}

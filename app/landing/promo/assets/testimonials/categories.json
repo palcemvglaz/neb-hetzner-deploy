@@ -1,0 +1,122 @@
+{
+  "title": "All Testimonial Categories",
+  "description": "Complete categorization of all testimonials for targeted marketing",
+  "categories": {
+    "life_saving": {
+      "name": "Life-Saving Stories",
+      "description": "Direct accounts of lives saved through Nebachiv training",
+      "count": 5,
+      "key_testimonials": ["hero-001", "hero-003", "hero-004"],
+      "marketing_priority": "highest",
+      "emotional_impact": 10
+    },
+    "skill_development": {
+      "name": "Technical Skill Development",
+      "description": "Improvements in riding technique and safety skills",
+      "count": 12,
+      "key_testimonials": ["transform-002", "expert-002"],
+      "marketing_priority": "high",
+      "target_audience": "skill_focused"
+    },
+    "ukrainian_content": {
+      "name": "Ukrainian Language Appreciation",
+      "description": "Gratitude for quality Ukrainian motorcycle content",
+      "count": 15,
+      "key_testimonials": ["@user-rp8es3pe2p", "@olegoleg359"],
+      "marketing_priority": "high",
+      "cultural_value": "national_pride"
+    },
+    "beginner_transformation": {
+      "name": "Beginner Success Stories",
+      "description": "New riders achieving confidence and safety",
+      "count": 8,
+      "key_testimonials": ["transform-001", "transform-004"],
+      "marketing_priority": "high",
+      "target_audience": "new_riders"
+    },
+    "experienced_learning": {
+      "name": "Veteran Riders Still Learning",
+      "description": "Experienced riders discovering knowledge gaps",
+      "count": 6,
+      "key_testimonials": ["expert-003", "transform-003"],
+      "marketing_priority": "medium",
+      "credibility_boost": "high"
+    },
+    "family_impact": {
+      "name": "Family & Community",
+      "description": "Impact on families and non-riders",
+      "count": 6,
+      "key_testimonials": ["family-001", "family-003"],
+      "marketing_priority": "high",
+      "audience_expansion": "beyond_riders"
+    },
+    "practical_application": {
+      "name": "Real-World Application",
+      "description": "Specific situations where training was applied",
+      "count": 10,
+      "key_testimonials": ["hero-004", "hero-005"],
+      "marketing_priority": "high",
+      "proof_of_concept": "validated"
+    },
+    "entertainment_value": {
+      "name": "Humor & Engagement",
+      "description": "Appreciation for entertaining education style",
+      "count": 7,
+      "key_testimonials": ["@dmytrolisovyk", "@paul_b4744"],
+      "marketing_priority": "medium",
+      "retention_factor": "high"
+    },
+    "professional_validation": {
+      "name": "Industry Recognition",
+      "description": "Endorsements from professionals and schools",
+      "count": 5,
+      "key_testimonials": ["expert-001", "expert-005"],
+      "marketing_priority": "high",
+      "authority_building": "essential"
+    },
+    "accident_recovery": {
+      "name": "Post-Accident Recovery",
+      "description": "Riders returning after crashes with new knowledge",
+      "count": 3,
+      "key_testimonials": ["hero-002", "transform-005"],
+      "marketing_priority": "medium",
+      "resilience_stories": "powerful"
+    }
+  },
+  "usage_matrix": {
+    "landing_page_hero": ["life_saving", "beginner_transformation"],
+    "social_media_posts": ["ukrainian_content", "entertainment_value", "practical_application"],
+    "email_campaigns": ["skill_development", "experienced_learning", "family_impact"],
+    "credibility_section": ["professional_validation", "experienced_learning"],
+    "testimonial_rotation": {
+      "new_visitors": ["life_saving", "beginner_transformation"],
+      "returning_visitors": ["skill_development", "practical_application"],
+      "social_proof": ["ukrainian_content", "professional_validation"],
+      "emotional_appeal": ["family_impact", "accident_recovery"]
+    }
+  },
+  "content_tags": {
+    "emotions": ["gratitude", "relief", "confidence", "pride", "humor", "respect"],
+    "outcomes": ["lives_saved", "skills_gained", "accidents_prevented", "confidence_built"],
+    "audiences": ["beginners", "experienced", "women", "families", "non_riders", "professionals"],
+    "values": ["safety", "education", "community", "ukrainian_culture", "accessibility", "quality"]
+  },
+  "selection_criteria": {
+    "high_impact": {
+      "description": "Testimonials with life-changing outcomes",
+      "metrics": ["saved_lives", "prevented_accidents", "major_transformations"]
+    },
+    "high_engagement": {
+      "description": "Testimonials with strong social proof",
+      "metrics": ["likes_count", "shares", "detailed_stories"]
+    },
+    "diverse_representation": {
+      "description": "Various rider types and experiences",
+      "metrics": ["gender_diversity", "experience_range", "age_groups"]
+    },
+    "authentic_voice": {
+      "description": "Genuine, unedited testimonials",
+      "metrics": ["emotional_authenticity", "specific_details", "personal_stories"]
+    }
+  }
+}

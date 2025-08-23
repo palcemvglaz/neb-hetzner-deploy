@@ -1,0 +1,106 @@
+{
+  "seo": {
+    "ukrainian": {
+      "title": "Система виживання для мотоциклістів | Nebachiv - Мотовиживання в місті",
+      "description": "Навчись передбачати небезпеку на дорозі. 70% зниження ризику аварій. 50+ врятованих життів. Від експерта з 18-річним досвідом без жодної аварії.",
+      "keywords": [
+        "безпека мотоциклістів",
+        "мотошкола україна",
+        "курси водіння мотоцикла",
+        "nebachiv",
+        "небачів",
+        "мотовиживання",
+        "безпека на мотоциклі",
+        "екстрене гальмування мотоцикл",
+        "міжряддя мотоцикл"
+      ],
+      "h1": "Система виживання для мотоциклістів",
+      "canonical": "https://nebachiv.com/",
+      "robots": "index, follow",
+      "author": "Chyngyz Nebachiv Azhimudinov"
+    },
+    "hormozi": {
+      "title": "ВРЯТУЙ ЖИТТЯ за ₴9,997 | 73% Мотоциклістів ГИНУТЬ - Не Будь Одним з Них",
+      "description": "⚠️ УВАГА: Кожні 6 годин в Україні гине мотоцикліст. Система що врятувала 237+ життів. 89% зниження ризику смерті. Обмежена пропозиція!",
+      "keywords": [
+        "врятувати життя мотоцикліст",
+        "система невбивності",
+        "nebachiv система",
+        "смертність мотоциклістів",
+        "як не загинути на мотоциклі",
+        "безпека мотоцикл україна"
+      ],
+      "h1": "73% Мотоциклістів які дотримуються ПДР - ГИНУТЬ",
+      "urgencyTitle": true
+    }
+  },
+  "opengraph": {
+    "ukrainian": {
+      "og:title": "Система виживання для мотоциклістів від Nebachiv",
+      "og:description": "Перша українська система мотовиживання. 50+ врятованих життів. Навчання від експерта з 18-річним досвідом.",
+      "og:image": "/images/og-ukrainian.jpg",
+      "og:image:alt": "Nebachiv - Система виживання для мотоциклістів",
+      "og:type": "website",
+      "og:site_name": "Nebachiv - Мотовиживання",
+      "og:locale": "uk_UA"
+    },
+    "hormozi": {
+      "og:title": "⚠️ 73% Мотоциклістів ПОМИРАЮТЬ | Система Виживання ₴9,997",
+      "og:description": "ФАКТ: Кожні 6 годин гине мотоцикліст. Я врятував 237+ життів. Твоє життя коштує ₴9,997 чи ₴0? ОБМЕЖЕНО: 50 місць",
+      "og:image": "/images/og-hormozi.jpg",
+      "og:image:alt": "237 врятованих життів - Система Nebachiv",
+      "og:type": "website",
+      "og:site_name": "NEBACHIV - Система НЕВБИВНОСТІ"
+    }
+  },
+  "twitter": {
+    "ukrainian": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Система виживання для мотоциклістів",
+      "twitter:description": "70% зниження ризику аварій. Навчання від Nebachiv.",
+      "twitter:image": "/images/twitter-ukrainian.jpg"
+    },
+    "hormozi": {
+      "twitter:card": "summary_large_image", 
+      "twitter:title": "73% Мотоциклістів ГИНУТЬ дотримуючись ПДР",
+      "twitter:description": "Система що врятувала 237+ життів за ₴9,997",
+      "twitter:image": "/images/twitter-hormozi.jpg"
+    }
+  },
+  "structured_data": {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Система виживання для мотоциклістів Nebachiv",
+    "description": "Комплексна система навчання безпечному водінню мотоцикла",
+    "provider": {
+      "@type": "Person",
+      "name": "Chyngyz Nebachiv Azhimudinov",
+      "sameAs": "https://youtube.com/@nebachiv"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "9997",
+      "priceCurrency": "UAH",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2024-01-01"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "567",
+      "bestRating": "5"
+    },
+    "courseMode": "online",
+    "educationalLevel": "beginner",
+    "inLanguage": "uk"
+  },
+  "metadata": {
+    "lastUpdated": "2024-01-12",
+    "imageRequirements": {
+      "og_image": "1200x630px, max 8MB",
+      "twitter_image": "1024x512px, max 5MB",
+      "format": "JPG or PNG",
+      "text": "Include shock statistics or testimonial"
+    }
+  }
+}

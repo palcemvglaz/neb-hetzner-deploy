@@ -1,0 +1,71 @@
+{
+  "videos": [
+    {
+      "id": "video-001",
+      "title": "Найпоширеніша аварія з мотоциклістом в місті. Чому це відбувається?",
+      "url": "https://youtube.com/watch?v=lnipNvWLlqE",
+      "thumbnail": "https://img.youtube.com/vi/lnipNvWLlqE/maxresdefault.jpg",
+      "category": "shock_content",
+      "tags": ["accident_analysis", "city_riding", "common_mistakes"],
+      "usage": ["hero_section", "problem_section"],
+      "priority": "highest",
+      "description": "Розбір найпоширенішої аварії в місті - ідеальний для shock-ефекту"
+    },
+    {
+      "id": "video-002",
+      "title": "Як екстрено гальмувати на мотоциклі і врятувати життя",
+      "url": "https://youtube.com/watch?v=7YPkxD_i4ME",
+      "thumbnail": "https://img.youtube.com/vi/7YPkxD_i4ME/maxresdefault.jpg",
+      "category": "life_saving",
+      "tags": ["emergency_braking", "survival_technique", "practical_skills"],
+      "usage": ["solution_section", "testimonials_support"],
+      "priority": "highest",
+      "description": "Техніка екстреного гальмування - найбільше врятованих життів"
+    },
+    {
+      "id": "video-003",
+      "title": "Чому досвідчені райдери вилітають у поворотах: розбір помилок",
+      "url": "https://youtube.com/watch?v=gNpTu0MQJQ4",
+      "thumbnail": "https://img.youtube.com/vi/gNpTu0MQJQ4/maxresdefault.jpg",
+      "category": "expert_mistakes",
+      "tags": ["experienced_riders", "corner_crashes", "lowside_highside"],
+      "usage": ["problem_section", "expert_proof"],
+      "priority": "high",
+      "description": "Показує що навіть досвідчені роблять помилки"
+    },
+    {
+      "id": "video-004",
+      "title": "7 Помилок гальмування мотоцикла які роблять більшість райдерів",
+      "url": "https://youtube.com/watch?v=AQ-R6BfpqD4",
+      "thumbnail": "https://img.youtube.com/vi/AQ-R6BfpqD4/maxresdefault.jpg",
+      "category": "educational",
+      "tags": ["braking_mistakes", "common_errors", "safety_tips"],
+      "usage": ["solution_section", "course_preview"],
+      "priority": "high",
+      "description": "Детальний розбір помилок гальмування"
+    },
+    {
+      "id": "video-005",
+      "title": "Семінар для мотоциклістів новачків [ Nebachiv 2024 ]",
+      "url": "https://youtube.com/watch?v=EDqfAC0zy1k",
+      "thumbnail": "https://img.youtube.com/vi/EDqfAC0zy1k/maxresdefault.jpg",
+      "category": "seminar",
+      "tags": ["live_seminar", "beginners", "full_course"],
+      "usage": ["social_proof", "course_preview"],
+      "priority": "medium",
+      "description": "Живий семінар - показує експертність та взаємодію з аудиторією"
+    }
+  ],
+  "metadata": {
+    "total": 5,
+    "lastUpdated": "2024-01-12",
+    "source": "KB_NEB YouTube catalog",
+    "categories": {
+      "shock_content": 1,
+      "life_saving": 1,
+      "expert_mistakes": 1,
+      "educational": 1,
+      "seminar": 1
+    }
+  }
+}

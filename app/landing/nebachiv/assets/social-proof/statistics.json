@@ -1,0 +1,102 @@
+{
+  "statistics": {
+    "audience": {
+      "youtube_subscribers": 3567,
+      "total_reach": 18500,
+      "active_students": 1000,
+      "description": "Активна спільнота мотоциклістів"
+    },
+    "impact": {
+      "lives_saved": {
+        "documented": 50,
+        "claimed": 237,
+        "description": "Задокументованих історій врятованих життів"
+      },
+      "risk_reduction": {
+        "percentage": 70,
+        "max_claimed": 89,
+        "description": "Зниження near-miss ситуацій за опитуваннями"
+      },
+      "accidents_analyzed": 12000,
+      "years_experience": 18,
+      "km_without_accident": 500000
+    },
+    "content": {
+      "total_videos": 22,
+      "total_comments": 698,
+      "quality_testimonials": 54,
+      "average_likes": 158,
+      "top_comment_likes": 342
+    },
+    "growth": {
+      "weekly_youtube": 150,
+      "weekly_instagram": 300,
+      "weekly_waitlist": 200,
+      "monthly_students": 50
+    },
+    "demographics": {
+      "age_range": "25-45",
+      "primary_cities": ["Київ", "Львів", "Одеса", "Харків"],
+      "profession_types": ["IT", "Лікарі", "Військові", "Бізнес"],
+      "experience_level": {
+        "beginners": "70%",
+        "intermediate": "20%",
+        "expert": "10%"
+      }
+    }
+  },
+  "proof_points": [
+    {
+      "metric": "37%",
+      "label": "Водіїв НЕ БАЧАТЬ мотоциклістів",
+      "icon": "alert",
+      "source": "MAIDS Study"
+    },
+    {
+      "metric": "52%",
+      "label": "Смертей - помилка мотоцикліста",
+      "icon": "trending-up",
+      "source": "MAIDS Study"
+    },
+    {
+      "metric": "32%",
+      "label": "ДТП - немає часу реагувати",
+      "icon": "clock",
+      "source": "MAIDS Study"
+    },
+    {
+      "metric": "77%",
+      "label": "Мали навчання, але розбились",
+      "icon": "shield",
+      "source": "MAIDS Study"
+    },
+    {
+      "metric": "0.9 сек",
+      "label": "Час реакції перед ДТП",
+      "icon": "clock",
+      "source": "MAIDS Study"
+    },
+    {
+      "metric": "921",
+      "label": "ДТП детально проаналізовано",
+      "icon": "chart",
+      "source": "MAIDS Europe"
+    },
+    {
+      "metric": "41%",
+      "label": "Падають через паніку з гальмами",
+      "icon": "shield",
+      "source": "MAIDS Study"
+    },
+    {
+      "metric": "35%",
+      "label": "ДТП - лівий поворот авто",
+      "icon": "eye-off",
+      "source": "MAIDS Study"
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2024-01-12",
+    "source": "KB_NEB marketing data analysis"
+  }
+}

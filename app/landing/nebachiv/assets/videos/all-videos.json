@@ -1,0 +1,87 @@
+{
+  "videos": [
+    {
+      "id": "v001",
+      "title": "7 Помилок гальмування мотоцикла які роблять більшість райдерів на дорогах",
+      "url": "https://youtube.com/watch?v=AQ-R6BfpqD4",
+      "category": "technical_skills"
+    },
+    {
+      "id": "v002",
+      "title": "MOTOHELP - Дії при ДТП",
+      "url": "https://youtube.com/watch?v=g--pttejDA4",
+      "category": "emergency_response"
+    },
+    {
+      "id": "v003",
+      "title": "Концентрація уваги на мотоциклі. Поради новачкам на дорозі",
+      "url": "https://youtube.com/watch?v=GJRgVr-0yQI",
+      "category": "beginner_tips"
+    },
+    {
+      "id": "v004",
+      "title": "Міжряддя для мотоцикліста. Повний гайд",
+      "url": "https://youtube.com/watch?v=K2_4XZdbBkQ",
+      "category": "lane_splitting"
+    },
+    {
+      "id": "v005",
+      "title": "Найпоширеніша аварія з мотоциклістом в місті. Чому це відбувається?",
+      "url": "https://youtube.com/watch?v=lnipNvWLlqE",
+      "category": "accident_analysis"
+    },
+    {
+      "id": "v006",
+      "title": "Семінар для мотоциклістів новачків [ Nebachiv 2024 ]",
+      "url": "https://youtube.com/watch?v=EDqfAC0zy1k",
+      "category": "seminar"
+    },
+    {
+      "id": "v007",
+      "title": "Чому Новачкам Мотоциклістам \"П\" в перші три сезона?",
+      "url": "https://youtube.com/watch?v=1oNqdgabXhc",
+      "category": "beginner_psychology"
+    },
+    {
+      "id": "v008",
+      "title": "Чому досвідчені райдери вилітають у поворотах: розбір помилок",
+      "url": "https://youtube.com/watch?v=gNpTu0MQJQ4",
+      "category": "expert_mistakes"
+    },
+    {
+      "id": "v009",
+      "title": "Чому люди ви**бу**ся на мотоциклах? Поради новачкам",
+      "url": "https://youtube.com/watch?v=OimzOcUf1Aw",
+      "category": "crash_psychology"
+    },
+    {
+      "id": "v010",
+      "title": "Чому ти Падаєш під час Гальмування? Топ-8 Найгірших Помилок Райдерів",
+      "url": "https://youtube.com/watch?v=1ybY43BSnaU",
+      "category": "braking_mistakes"
+    },
+    {
+      "id": "v011",
+      "title": "Як вилітають новачки: основні причини падінь у поворотах",
+      "url": "https://youtube.com/watch?v=k1SFTX-vCwA",
+      "category": "cornering_crashes"
+    },
+    {
+      "id": "v012",
+      "title": "Як екстрено гальмувати на мотоциклі і врятувати життя",
+      "url": "https://youtube.com/watch?v=7YPkxD_i4ME",
+      "category": "emergency_braking"
+    }
+  ],
+  "metadata": {
+    "total": 12,
+    "lastUpdated": "2024-01-12",
+    "source": "Nebachiv YouTube Channel",
+    "categories": {
+      "technical_skills": ["v001", "v004", "v012"],
+      "safety_analysis": ["v005", "v008", "v009", "v010", "v011"],
+      "beginner_content": ["v003", "v006", "v007"],
+      "emergency": ["v002", "v012"]
+    }
+  }
+}

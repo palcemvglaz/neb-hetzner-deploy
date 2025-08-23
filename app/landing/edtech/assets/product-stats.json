@@ -1,0 +1,121 @@
+{
+  "techStack": {
+    "title": "Production-Ready Tech Stack",
+    "grade": "A+",
+    "technologies": [
+      {
+        "name": "Next.js 14",
+        "version": "14.2.30",
+        "category": "Framework",
+        "description": "Cutting-edge React framework"
+      },
+      {
+        "name": "TypeScript", 
+        "version": "5.3.3",
+        "category": "Language",
+        "description": "Type-safe development"
+      },
+      {
+        "name": "Prisma ORM",
+        "version": "6.10.1", 
+        "category": "Database",
+        "description": "Modern database toolkit"
+      },
+      {
+        "name": "Capacitor",
+        "version": "7.3.0",
+        "category": "Mobile",
+        "description": "Cross-platform mobile apps"
+      }
+    ],
+    "advantages": [
+      "✅ Production-ready with CI/CD",
+      "✅ Scalable PostgreSQL + Redis", 
+      "✅ Mobile-first iOS/Android apps",
+      "✅ Modern UI with Tailwind + Radix",
+      "✅ AI Integration with OpenAI + KB_NEB"
+    ]
+  },
+  "marketSize": {
+    "global": {
+      "edtech2024": "$348 млрд",
+      "edtech2030": "$605 млрд", 
+      "cagr": "9.5%",
+      "nicheGrowth": "найшвидше зростання"
+    },
+    "ukraine": {
+      "motorcyclists": "400,000+",
+      "schools": "200+ активних мотошкіл",
+      "yearlyGrowth": "+15%",
+      "warImpact": "практичний транспорт"
+    }
+  },
+  "segments": {
+    "b2c": {
+      "percentage": 70,
+      "description": "Індивідуальні студенти",
+      "primary": "Новачки 18-35 років",
+      "payingCapacity": "₴500-2000/місяць",
+      "painPoint": "Відсутність якісного UA контенту"
+    },
+    "b2b": {
+      "percentage": 25,
+      "description": "Мотошколи",
+      "target": "200+ мотошкіл в Україні", 
+      "saasModel": "₴5000-15000/місяць",
+      "valueProp": "Готовий контент + автоматизація",
+      "roi": "Економія 80% часу"
+    },
+    "b2g": {
+      "percentage": 5,
+      "description": "Державний сектор",
+      "targets": "МВС, поліція, держслужби",
+      "contracts": "₴500K-2M"
+    }
+  },
+  "revenueStreams": {
+    "subscriptions": {
+      "percentage": 60,
+      "tiers": [
+        {"name": "FREE", "price": "₴0", "features": "Базові матеріали"},
+        {"name": "BASIC", "price": "₴299/міс", "features": "Повний доступ"},
+        {"name": "PREMIUM", "price": "₴599/міс", "features": "AI тьютор + персоналізація"}, 
+        {"name": "PRO", "price": "₴999/міс", "features": "Сертифікація + менторинг"}
+      ]
+    },
+    "b2bSaas": {
+      "percentage": 25,
+      "tiers": [
+        {"name": "STARTER", "price": "₴5,000/міс", "capacity": "до 50 студентів"},
+        {"name": "BUSINESS", "price": "₴12,000/міс", "capacity": "до 200 студентів"},
+        {"name": "ENTERPRISE", "price": "₴25,000/міс", "capacity": "необмежено + кастомізація"}
+      ]
+    },
+    "marketplace": {
+      "percentage": 15,
+      "services": [
+        {"name": "Курси від партнерів", "commission": "30%"},
+        {"name": "Premium відео", "price": "₴99-299"},
+        {"name": "Сертифікація", "price": "₴500-1500"},
+        {"name": "Страхування", "type": "партнерська програма"}
+      ]
+    }
+  },
+  "projections": {
+    "year1": {
+      "users": "2,000 B2C + 20 B2B",
+      "revenue": "₴8M ARR", 
+      "growth": "15% MRR growth"
+    },
+    "year2": {
+      "users": "10,000 B2C + 80 B2B",
+      "revenue": "₴35M ARR",
+      "expansion": "Польща, Прибалтика"
+    },
+    "year3": {
+      "users": "50,000 B2C + 200 B2B", 
+      "revenue": "₴120M ARR",
+      "milestone": "IPO/Exit ready"
+    }
+  }
+}

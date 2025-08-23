@@ -1,0 +1,94 @@
+{
+  "title": "Life-Saving Testimonials",
+  "description": "The most powerful testimonials demonstrating real impact on saving lives",
+  "testimonials": [
+    {
+      "id": "hero-001",
+      "author": "Володимир К.",
+      "platform": "YouTube",
+      "likes": 342,
+      "category": "life_saved",
+      "text_ua": "Ваші уроки врятували мені життя! Місяць тому потрапив у критичну ситуацію - вантажівка різко повернула переді мною. Завдяки вашій техніці екстреного гальмування зміг зупинитись за метр до зіткнення. Дружина плакала від щастя, коли я повернувся додому. Дякую вам за те, що робите! 🙏",
+      "text_en": "Your lessons saved my life! A month ago I got into a critical situation - a truck suddenly turned in front of me. Thanks to your emergency braking technique, I was able to stop a meter before the collision. My wife cried with happiness when I returned home. Thank you for what you do! 🙏",
+      "key_points": [
+        "Direct life-saving impact",
+        "Emergency braking technique",
+        "Family emotional connection",
+        "Real-world application"
+      ],
+      "marketing_usage": "primary_hero_section",
+      "emotion_score": 10
+    },
+    {
+      "id": "hero-002",
+      "author": "Максим Д.",
+      "platform": "YouTube",
+      "likes": 489,
+      "category": "recovery_story",
+      "text_ua": "Рік тому розбився через свою самовпевненість. Після відновлення боявся сідати на мотоцикл. Ваші відео допомогли зрозуміти мої помилки і повернути впевненість. Тепер їжджу з дотриманням всіх правил безпеки. Навчаю інших тому, чого навчився у вас. Ви робите світ безпечнішим!",
+      "text_en": "A year ago I crashed due to my overconfidence. After recovery, I was afraid to get on a motorcycle. Your videos helped me understand my mistakes and regain confidence. Now I ride following all safety rules. I teach others what I learned from you. You make the world safer!",
+      "key_points": [
+        "Overcoming trauma",
+        "Learning from mistakes",
+        "Passing knowledge forward",
+        "Making world safer"
+      ],
+      "marketing_usage": "transformation_stories",
+      "emotion_score": 9
+    },
+    {
+      "id": "hero-003",
+      "author": "Анонім (автомобіліст)",
+      "platform": "Instagram DM",
+      "category": "prevented_accident",
+      "text_ua": "Я тільки вчуся в автошколі для іспиту на категорію А, але я їжджу на машині. Вчора, коли їхав по вулиці, потрібно було повертати на ліво з головної, а прямо на мене їхав велосипедист... я згадав твої слова, що водій не сприймає мото і вело як загрозу і дивлячись тобі в очі буде продовжувати повертати.... але я сприйняв вело як загрозу. Моє світобачення змінилось, я почав бачити мотоцикли... Можливо твій проект вже врятував моє життя і життя того велосипедиста! Дякую! 👏👏👏",
+      "text_en": "I'm just learning in driving school for category A test, but I drive a car. Yesterday, when driving on the street, I needed to turn left from the main road, and a cyclist was coming straight at me... I remembered your words that drivers don't perceive motorcycles and bicycles as threats and will continue turning while looking you in the eye... but I perceived the bike as a threat. My worldview has changed, I started seeing motorcycles... Maybe your project has already saved my life and the life of that cyclist! Thank you! 👏👏👏",
+      "key_points": [
+        "Changed perception of vulnerable road users",
+        "Prevented potential accident",
+        "Impact beyond motorcyclists",
+        "Mindset transformation"
+      ],
+      "marketing_usage": "broader_impact",
+      "emotion_score": 10
+    },
+    {
+      "id": "hero-004",
+      "author": "Анонім (жінка-райдер)",
+      "platform": "Instagram DM",
+      "category": "critical_save",
+      "text_ua": "Їхала 120 десь, переді мною тупо почала розвертатись фура (класика), сонце походу водія сліпило, плюс моя швидкість. Але бля, я тупо без паніки відтормозилась. Знайомий що їхав позаду, каже типу 'думав що всьо, приїхали', хоча для мене там ніче такого не було. Дореці, привчаю себе тормозити тільки переднім(при ідеальних умовах), ото позавчора і відтормозилась тільки переднім. До чого це я. Тренить - треба. Це тупо скіл який рано чи пізно спрацює на рівні інстинкту.",
+      "text_en": "I was riding about 120 km/h, a truck started turning in front of me (classic), the sun was blinding the driver, plus my speed. But damn, I just calmly braked without panic. A friend riding behind said 'I thought that's it, we're done', although for me it was nothing special. By the way, I train myself to brake only with the front (in ideal conditions), and the day before yesterday I braked only with the front. My point is - you need to train. It's simply a skill that sooner or later will work at the instinct level.",
+      "key_points": [
+        "Calm reaction in critical situation",
+        "Front brake mastery",
+        "Training creates instincts",
+        "Avoided truck collision"
+      ],
+      "marketing_usage": "skill_development",
+      "emotion_score": 9
+    },
+    {
+      "id": "hero-005",
+      "author": "Анонім",
+      "platform": "Instagram DM",
+      "category": "long_journey_success",
+      "text_ua": "За знання, якими ділишся. Дуже допомагають у першому сезоні і дають змогу їздити в кайф. Цього місяця за 11 днів катнув 4800 км від Балтії до Франції і назад на стріті Suzuki SV650. Всі знання про міжряддя (з навчальних відосів і твоїх онбордів по Києву), блокери, екстренні гальмування та інше дуже допомогли кайфанути від подорожі і вберегли від прийобів 😂 Дякую, 🙏 мотик — це життя. Nebachiv — школа мотожиття 😂",
+      "text_en": "For the knowledge you share. Very helpful in the first season and allows riding with pleasure. This month in 11 days I rode 4800 km from the Baltic to France and back on a Suzuki SV650 street. All the knowledge about lane splitting (from educational videos and your onboards in Kyiv), blockers, emergency braking and more really helped enjoy the journey and saved from troubles 😂 Thank you, 🙏 bike is life. Nebachiv is the school of moto-life 😂",
+      "key_points": [
+        "4800km in 11 days as a beginner",
+        "Applied multiple techniques",
+        "Safe European journey",
+        "First season success"
+      ],
+      "marketing_usage": "adventure_enabler",
+      "emotion_score": 8
+    }
+  ],
+  "usage_guidelines": {
+    "primary_hero": "Use Володимир К.'s testimonial as the main hero story",
+    "rotation": "Rotate testimonials based on audience segment",
+    "localization": "Use Ukrainian text for UA market, English for international",
+    "emphasis": "Always highlight the life-saving aspect and family impact"
+  }
+}

@@ -1,0 +1,1331 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                           String              @id @default(cuid())
+  email                        String              @unique
+  emailVerified                DateTime?
+  password                     String?
+  name                         String?
+  image                        String?
+  role                         String              @default("STUDENT")
+  phone                        String?
+  dateOfBirth                  DateTime?
+  schoolId                     String?
+  schoolGroupId                String?
+  stripeCustomerId             String?
+  stripeSubscriptionId         String?             @unique
+  subscriptionStatus           String?
+  subscriptionTier             String              @default("FREE")
+  subscriptionCurrentPeriodEnd DateTime?
+  createdAt                    DateTime            @default(now())
+  updatedAt                    DateTime            @updatedAt
+  lastLoginAt                  DateTime?
+  defaultShippingAddress       String?
+  preferredShippingMethod      String?
+  wishlist                     String?
+  loyaltyPoints                Int                 @default(0)
+  loyaltyTier                  String              @default("bronze")
+  deletedAt                    DateTime?
+  deletedBy                    String?
+  deletionReason               String?
+  riderProfile                 String?             // BEGINNER_CAREFUL, BEGINNER_FAST, BEGINNER_ROMANTIC, EXPERT_MENTOR, EXPERT_SPORTSMAN, EXPERT_TRAVELER
+  riderProfileData             Json?               // Detailed profile calculation data
+  aiUsageLogs                  AIUsageLog[]
+  accounts                     Account[]
+  auditLogs                    AuditLog[]
+  carts                        Cart[]
+  certificates                 Certificate[]
+  coursesCreated               Course[]            @relation("InstructorCourses")
+  reviews                      CourseReview[]
+  dailyActivities              DailyActivity[]
+  enrollments                  Enrollment[]
+  leaderboardEntries           Leaderboard[]
+  notifications                Notification[]
+  orders                       Order[]
+  payments                     Payment[]
+  practiceAttempts             PracticeAttempt[]
+  products                     Product[]           @relation("SellerProducts")
+  progress                     Progress[]
+  purchasedProducts            ProductPurchase[]
+  savedFilters                 SavedFilter[]
+  sessions                     Session[]
+  shippingAddresses            ShippingAddress[]
+  socialProfiles               UserSocialProfile[]
+  school                       School?             @relation("SchoolUsers", fields: [schoolId], references: [id])
+  schoolGroup                  SchoolGroup?        @relation(fields: [schoolGroupId], references: [id])
+  testResults                  TestResult[]
+  xpTransactions               XPTransaction[]
+  streakRecords                StreakRecord[]
+  badges                       UserBadge[]
+  achievements                 UserAchievement[]
+  referrals                    Referral[]          @relation("ReferrerUser")
+  referredBy                   Referral?           @relation("ReferredUser")
+  adminSettings                AdminSettings[]
+  feedbackSubmissions          FeedbackSubmission[]
+  pageEngagements              PageEngagement[]
+  featureUsages                FeatureUsage[]
+  sessionBehaviors             SessionBehavior[]
+  conversionFunnels            ConversionFunnel[]
+  userSegments                 UserSegment[]
+  realtimeMetrics              RealtimeMetric[]
+  batchAnalytics               BatchAnalytic[]
+  createdUserFlows             UserFlow[]
+  userFlowNodes                UserFlowNode[]
+  testSessions                 TestSession[]
+  testAnswers                  TestAnswer[]
+  adaptiveTestResults          AdaptiveTestResult[]
+  questionnaireProfiles        QuestionnaireProfile[]
+  riderTimeline                RiderTimelineEvent[]
+  motorcycles                  UserMotorcycle[]
+  riderSkillMap                RiderSkillMap?
+  riderSkills                  RiderSkills?
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model School {
+  id                 String              @id @default(cuid())
+  name               String
+  description        String?
+  logo               String?
+  coverImage         String?
+  address            String?
+  phone              String?
+  email              String?
+  website            String?
+  subscriptionStatus String              @default("FREE")
+  subscriptionTier   String              @default("FREE")
+  stripeCustomerId   String?
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+  students           User[]              @relation("SchoolUsers")
+  groups             SchoolGroup[]
+  courses            Course[]
+  schoolInstructors  SchoolInstructor[]
+  announcements      Announcement[]
+}
+
+model SchoolGroup {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  schoolId    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  school      School   @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  students    User[]
+}
+
+model SchoolInstructor {
+  id           String   @id @default(cuid())
+  schoolId     String
+  instructorId String
+  role         String   @default("INSTRUCTOR")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  school       School   @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+}
+
+model Course {
+  id                 String               @id @default(cuid())
+  title              String
+  slug               String               @unique
+  description        String?
+  shortDescription   String?
+  imageUrl           String?
+  videoUrl           String?
+  price              Float                @default(0)
+  originalPrice      Float?
+  currency           String               @default("UAH")
+  language           String               @default("uk")
+  level              String               @default("beginner")
+  duration           Int?
+  totalLessons       Int                  @default(0)
+  totalStudents      Int                  @default(0)
+  rating             Float                @default(0)
+  totalRatings       Int                  @default(0)
+  prerequisites      String?
+  learningOutcomes   String?
+  targetAudience     String?
+  includes           String?
+  requirements       String?
+  tags               String?
+  category           String?
+  subcategory        String?
+  status             String               @default("draft")
+  visibility         String               @default("public")
+  enrollmentType     String               @default("open")
+  certificateEnabled Boolean              @default(false)
+  forumEnabled       Boolean              @default(false)
+  maxStudents        Int?
+  startDate          DateTime?
+  endDate            DateTime?
+  enrollmentDeadline DateTime?
+  instructorId       String?
+  schoolId           String?
+  kbNebThemeId       String?
+  lastSyncedAt       DateTime?
+  syncStatus         String?
+  featured           Boolean              @default(false)
+  bestSeller         Boolean              @default(false)
+  isNew              Boolean              @default(false)
+  createdAt          DateTime             @default(now())
+  updatedAt          DateTime             @updatedAt
+  publishedAt        DateTime?
+  archivedAt         DateTime?
+  searchVector       String?
+  instructor         User?                @relation("InstructorCourses", fields: [instructorId], references: [id])
+  school             School?              @relation(fields: [schoolId], references: [id])
+  modules            Module[]
+  enrollments        Enrollment[]
+  reviews            CourseReview[]
+  announcements      Announcement[]
+  articleSuggestions ArticleSuggestion[]
+  certificates       Certificate[]
+  contentEngagements ContentEngagement[]
+  dynamicContents    DynamicContent[]
+  quizzes            Quiz[]
+  studentQuizResults StudentQuizResult[]
+  pageTemplates      PageTemplate[]
+}
+
+model Module {
+  id           String   @id @default(cuid())
+  title        String
+  description  String?
+  courseId     String
+  orderIndex   Int      @default(0)
+  duration     Int?
+  isPublished  Boolean  @default(false)
+  isFree       Boolean  @default(false)
+  releaseDate  DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  course       Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  lessons      Lesson[]
+}
+
+model Lesson {
+  id              String           @id @default(cuid())
+  title           String
+  slug            String
+  description     String?
+  content         String?
+  contentType     String           @default("article")
+  videoUrl        String?
+  duration        Int?
+  attachments     String?
+  moduleId        String
+  orderIndex      Int              @default(0)
+  isPublished     Boolean          @default(false)
+  isFree          Boolean          @default(false)
+  releaseDate     DateTime?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  module          Module           @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  progress        Progress[]
+  comments        Comment[]
+  practiceAttempts PracticeAttempt[]
+  lessonPageTemplates LessonPageTemplate[]
+
+  @@unique([moduleId, slug])
+}
+
+model Enrollment {
+  id               String    @id @default(cuid())
+  userId           String
+  courseId         String
+  status           String    @default("active")
+  progress         Float     @default(0)
+  completedLessons Int       @default(0)
+  startedAt        DateTime  @default(now())
+  completedAt      DateTime?
+  lastAccessedAt   DateTime?
+  certificateId    String?
+  grade            Float?
+  notes            String?
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course           Course    @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+}
+
+model Progress {
+  id               String   @id @default(cuid())
+  userId           String
+  lessonId         String
+  completed        Boolean  @default(false)
+  completedAt      DateTime?
+  timeSpent        Int      @default(0)
+  lastAccessedAt   DateTime @default(now())
+  videoProgress    Float?
+  notes            String?
+  bookmarked       Boolean  @default(false)
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson           Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, lessonId])
+}
+
+model CourseReview {
+  id         String   @id @default(cuid())
+  userId     String
+  courseId   String
+  rating     Int
+  title      String?
+  comment    String?
+  helpful    Int      @default(0)
+  verified   Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course     Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+}
+
+model Comment {
+  id         String    @id @default(cuid())
+  userId     String
+  lessonId   String
+  parentId   String?
+  content    String
+  likes      Int       @default(0)
+  isEdited   Boolean   @default(false)
+  isPinned   Boolean   @default(false)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  lesson     Lesson    @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  parent     Comment?  @relation("CommentReplies", fields: [parentId], references: [id])
+  replies    Comment[] @relation("CommentReplies")
+}
+
+model Certificate {
+  id           String   @id @default(cuid())
+  userId       String
+  courseId     String
+  certificateNo String  @unique
+  issueDate    DateTime @default(now())
+  expiryDate   DateTime?
+  grade        Float?
+  honors       String?
+  downloadUrl  String?
+  verifyUrl    String?
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course       Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+}
+
+model Announcement {
+  id          String    @id @default(cuid())
+  title       String
+  content     String
+  type        String    @default("info")
+  priority    String    @default("normal")
+  courseId    String?
+  schoolId    String?
+  targetRole  String?
+  isPublished Boolean   @default(true)
+  publishedAt DateTime?
+  expiresAt   DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  course      Course?   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  school      School?   @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+}
+
+model Payment {
+  id              String   @id @default(cuid())
+  userId          String
+  amount          Float
+  currency        String   @default("UAH")
+  status          String   @default("pending")
+  type            String
+  description     String?
+  stripePaymentId String?
+  stripeInvoiceId String?
+  metadata        String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Notification {
+  id         String    @id @default(cuid())
+  userId     String
+  title      String
+  message    String
+  type       String    @default("info")
+  link       String?
+  isRead     Boolean   @default(false)
+  readAt     DateTime?
+  createdAt  DateTime  @default(now())
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model DailyActivity {
+  id         String   @id @default(cuid())
+  userId     String
+  date       DateTime @default(now())
+  minutes    Int      @default(0)
+  lessons    Int      @default(0)
+  xpEarned   Int      @default(0)
+  activities String?
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, date])
+}
+
+model XPTransaction {
+  id          String   @id @default(cuid())
+  userId      String
+  amount      Int
+  type        String
+  description String?
+  metadata    String?
+  createdAt   DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Leaderboard {
+  id         String   @id @default(cuid())
+  userId     String
+  period     String
+  score      Int      @default(0)
+  rank       Int?
+  metadata   String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, period])
+}
+
+model StreakRecord {
+  id            String    @id @default(cuid())
+  userId        String
+  currentStreak Int       @default(0)
+  longestStreak Int       @default(0)
+  lastActiveDate DateTime @default(now())
+  streakStartDate DateTime @default(now())
+  frozenDays    Int       @default(0)
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId])
+}
+
+model Badge {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String
+  icon        String
+  category    String
+  tier        String   @default("bronze")
+  requirement String
+  xpReward    Int      @default(0)
+  createdAt   DateTime @default(now())
+  users       UserBadge[]
+}
+
+model UserBadge {
+  id         String   @id @default(cuid())
+  userId     String
+  badgeId    String
+  earnedAt   DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badge      Badge    @relation(fields: [badgeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, badgeId])
+}
+
+model Achievement {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String
+  category    String
+  points      Int      @default(0)
+  icon        String?
+  rarity      String   @default("common")
+  createdAt   DateTime @default(now())
+  users       UserAchievement[]
+}
+
+model UserAchievement {
+  id           String      @id @default(cuid())
+  userId       String
+  achievementId String
+  unlockedAt   DateTime    @default(now())
+  progress     Float       @default(0)
+  user         User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  achievement  Achievement @relation(fields: [achievementId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, achievementId])
+}
+
+model Referral {
+  id              String    @id @default(cuid())
+  referrerId      String
+  referredUserId  String    @unique
+  status          String    @default("pending")
+  rewardClaimed   Boolean   @default(false)
+  createdAt       DateTime  @default(now())
+  completedAt     DateTime?
+  referrer        User      @relation("ReferrerUser", fields: [referrerId], references: [id])
+  referredUser    User      @relation("ReferredUser", fields: [referredUserId], references: [id])
+}
+
+model RiderSkills {
+  id              String   @id @default(cuid())
+  userId          String   @unique
+  skills          Json     // Map of skillId -> level (0-100)
+  totalDistance   Int      @default(0) // Total km ridden
+  ridingMonths    Int      @default(0) // Months of riding experience
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  completedEvents RiderEvent[]
+}
+
+model RiderEvent {
+  id             String       @id @default(cuid())
+  eventId        String       // Reference to event in motorcycleEvents.ts
+  riderSkillsId  String
+  completedAt    DateTime     @default(now())
+  notes          String?
+  riderSkills    RiderSkills  @relation(fields: [riderSkillsId], references: [id], onDelete: Cascade)
+  
+  @@unique([riderSkillsId, eventId])
+}
+
+model PracticeAttempt {
+  id            String   @id @default(cuid())
+  userId        String
+  lessonId      String
+  score         Float
+  timeSpent     Int
+  answers       String?
+  feedback      String?
+  completedAt   DateTime @default(now())
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson        Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+}
+
+model Product {
+  id           String            @id @default(cuid())
+  title        String
+  slug         String            @unique
+  description  String?
+  price        Float
+  currency     String            @default("UAH")
+  category     String
+  imageUrl     String?
+  stock        Int               @default(0)
+  sellerId     String
+  status       String            @default("active")
+  featured     Boolean           @default(false)
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  seller       User              @relation("SellerProducts", fields: [sellerId], references: [id])
+  purchases    ProductPurchase[]
+  cartItems    CartItem[]
+  orderItems   OrderItem[]
+}
+
+model ProductPurchase {
+  id         String   @id @default(cuid())
+  userId     String
+  productId  String
+  orderId    String?
+  price      Float
+  quantity   Int      @default(1)
+  createdAt  DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product    Product  @relation(fields: [productId], references: [id])
+  order      Order?   @relation(fields: [orderId], references: [id])
+}
+
+model Cart {
+  id        String     @id @default(cuid())
+  userId    String     @unique
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items     CartItem[]
+}
+
+model CartItem {
+  id        String   @id @default(cuid())
+  cartId    String
+  productId String
+  quantity  Int      @default(1)
+  createdAt DateTime @default(now())
+  cart      Cart     @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  product   Product  @relation(fields: [productId], references: [id])
+
+  @@unique([cartId, productId])
+}
+
+model Order {
+  id              String            @id @default(cuid())
+  userId          String
+  orderNumber     String            @unique
+  status          String            @default("pending")
+  total           Float
+  currency        String            @default("UAH")
+  shippingAddress String?
+  billingAddress  String?
+  notes           String?
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  user            User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items           OrderItem[]
+  purchases       ProductPurchase[]
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  orderId   String
+  productId String
+  quantity  Int
+  price     Float
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product   Product @relation(fields: [productId], references: [id])
+}
+
+model ShippingAddress {
+  id         String   @id @default(cuid())
+  userId     String
+  name       String
+  street     String
+  city       String
+  state      String?
+  postalCode String
+  country    String
+  phone      String?
+  isDefault  Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model KBNebContent {
+  id               String              @id @default(cuid())
+  themeId          String
+  format           String
+  language         String              @default("uk")
+  title            String
+  content          String
+  metadata         String?
+  tags             String?
+  status           String              @default("draft")
+  lastSyncedAt     DateTime?
+  createdAt        DateTime            @default(now())
+  updatedAt        DateTime            @updatedAt
+  kbNebSyncLogs    KBNebSyncLog[]
+  articleSuggestions ArticleSuggestion[]
+}
+
+model KBNebSyncLog {
+  id           String        @id @default(cuid())
+  operation    String
+  status       String
+  contentId    String?
+  errorMessage String?
+  metadata     String?
+  createdAt    DateTime      @default(now())
+  content      KBNebContent? @relation(fields: [contentId], references: [id])
+}
+
+model ArticleSuggestion {
+  id          String        @id @default(cuid())
+  courseId    String
+  kbNebId     String?
+  title       String
+  description String?
+  status      String        @default("pending")
+  priority    Int           @default(0)
+  metadata    String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  course      Course        @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  kbNebContent KBNebContent? @relation(fields: [kbNebId], references: [id])
+}
+
+model ContentEngagement {
+  id           String   @id @default(cuid())
+  userId       String
+  contentType  String
+  contentId    String
+  courseId     String?
+  action       String
+  duration     Int?
+  metadata     String?
+  createdAt    DateTime @default(now())
+  course       Course?  @relation(fields: [courseId], references: [id])
+}
+
+model SavedFilter {
+  id         String   @id @default(cuid())
+  userId     String
+  name       String
+  filterType String
+  filterData String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model UserSocialProfile {
+  id         String   @id @default(cuid())
+  userId     String
+  platform   String
+  profileUrl String
+  username   String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, platform])
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  userId     String?
+  action     String
+  entity     String
+  entityId   String?
+  oldValues  String?
+  newValues  String?
+  ipAddress  String?
+  userAgent  String?
+  metadata   String?
+  createdAt  DateTime @default(now())
+  user       User?    @relation(fields: [userId], references: [id])
+}
+
+model AIUsageLog {
+  id          String   @id @default(cuid())
+  userId      String
+  feature     String
+  model       String?
+  tokensUsed  Int?
+  cost        Float?
+  response    String?
+  metadata    String?
+  createdAt   DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model SystemSettings {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String
+  description String?
+  updatedAt   DateTime @updatedAt
+}
+
+model AdminSettings {
+  id          String   @id @default(cuid())
+  userId      String
+  key         String
+  value       String
+  updatedAt   DateTime @updatedAt
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, key])
+}
+
+model Quiz {
+  id                 String              @id @default(cuid())
+  title              String
+  description        String?
+  courseId           String
+  passingScore       Int                 @default(60)
+  timeLimit          Int?
+  randomizeQuestions Boolean             @default(false)
+  showCorrectAnswers Boolean             @default(true)
+  maxAttempts        Int?
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+  course             Course              @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  questions          QuizQuestion[]
+  results            StudentQuizResult[]
+}
+
+model QuizQuestion {
+  id           String         @id @default(cuid())
+  quizId       String
+  question     String
+  type         String         @default("multiple_choice")
+  options      String?
+  correctAnswer String
+  explanation  String?
+  points       Int            @default(1)
+  orderIndex   Int            @default(0)
+  quiz         Quiz           @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  answers      StudentAnswer[]
+}
+
+model StudentQuizResult {
+  id          String   @id @default(cuid())
+  userId      String
+  quizId      String
+  courseId    String
+  score       Float
+  passed      Boolean
+  attemptNumber Int    @default(1)
+  timeSpent   Int?
+  answers     String?
+  completedAt DateTime @default(now())
+  quiz        Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  course      Course   @relation(fields: [courseId], references: [id])
+}
+
+// =======================================
+// RIDER BIOGRAPHY & SKILLS SYSTEM
+// =======================================
+
+model RiderTimelineEvent {
+  id           String   @id @default(cuid())
+  userId       String
+  eventType    String   // started_riding, bought_bike, achievement, accident, skill_learned, moto_school
+  eventDate    DateTime
+  title        String
+  description  String?
+  metadata     Json?    // Additional event data
+  icon         String?  // Emoji or icon name
+  isPublic     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId, eventDate])
+  @@index([eventType])
+}
+
+model UserMotorcycle {
+  id           String   @id @default(cuid())
+  userId       String
+  brand        String
+  model        String
+  year         Int?
+  engineSize   Int?     // in cc
+  purchaseDate DateTime?
+  sellDate     DateTime?
+  isCurrent    Boolean  @default(false)
+  photos       Json?
+  metadata     Json?    // Additional bike data
+  createdAt    DateTime @default(now())
+  
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId])
+}
+
+model RiderSkillMap {
+  id              String   @id @default(cuid())
+  userId          String   @unique
+  
+  // Basic skills (0-100 scale)
+  basicSkills     Json     // cityRiding, highway, laneFiltering, braking, cornering
+  
+  // Advanced skills (0-100 scale)
+  advancedSkills  Json     // kneeDown, wetRiding, nightRiding, groupRiding, trackRiding
+  
+  // Stunt skills (boolean/level)
+  stuntSkills     Json     // wheelie, stoppie, burnout, powerslide
+  
+  // Safety skills (0-100 scale)
+  safetySkills    Json     // hazardPerception, emergencyBraking, counterSteering
+  
+  // Overall metrics
+  overallLevel    Int      // 1-10 scale
+  totalRidingHours Int?    
+  totalDistance   Int?     // in km
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model StudentAnswer {
+  id           String       @id @default(cuid())
+  userId       String
+  questionId   String
+  answer       String
+  isCorrect    Boolean
+  pointsEarned Int          @default(0)
+  createdAt    DateTime     @default(now())
+  question     QuizQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+}
+
+model DynamicContent {
+  id          String   @id @default(cuid())
+  courseId    String
+  contentType String
+  trigger     String
+  content     String
+  conditions  String?
+  priority    Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  course      Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+}
+
+model PageTemplate {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  category    String
+  description String?
+  content     String
+  thumbnail   String?
+  variables   String?
+  isPublic    Boolean  @default(false)
+  courseId    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  course      Course?  @relation(fields: [courseId], references: [id])
+  lessonPages LessonPageTemplate[]
+}
+
+model LessonPageTemplate {
+  id         String       @id @default(cuid())
+  lessonId   String
+  templateId String
+  content    String?
+  orderIndex Int          @default(0)
+  isActive   Boolean      @default(true)
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+  lesson     Lesson       @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  template   PageTemplate @relation(fields: [templateId], references: [id])
+}
+
+model FeedbackSubmission {
+  id          String   @id @default(cuid())
+  userId      String?
+  type        String
+  category    String?
+  subject     String
+  message     String
+  rating      Int?
+  pageUrl     String?
+  status      String   @default("new")
+  priority    String   @default("normal")
+  response    String?
+  respondedAt DateTime?
+  metadata    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user        User?    @relation(fields: [userId], references: [id])
+}
+
+model PageEngagement {
+  id            String   @id @default(cuid())
+  userId        String?
+  sessionId     String
+  pageUrl       String
+  pageTitle     String?
+  referrer      String?
+  timeOnPage    Int
+  scrollDepth   Float?
+  clicks        Int      @default(0)
+  interactions  String?
+  deviceType    String?
+  browser       String?
+  createdAt     DateTime @default(now())
+  user          User?    @relation(fields: [userId], references: [id])
+}
+
+model FeatureUsage {
+  id          String   @id @default(cuid())
+  userId      String?
+  featureName String
+  action      String
+  count       Int      @default(1)
+  metadata    String?
+  createdAt   DateTime @default(now())
+  user        User?    @relation(fields: [userId], references: [id])
+}
+
+model SessionBehavior {
+  id              String   @id @default(cuid())
+  userId          String?
+  sessionId       String
+  events          String
+  patterns        String?
+  anomalies       String?
+  riskScore       Float?
+  createdAt       DateTime @default(now())
+  user            User?    @relation(fields: [userId], references: [id])
+}
+
+model ConversionFunnel {
+  id           String   @id @default(cuid())
+  userId       String?
+  funnelName   String
+  step         String
+  completed    Boolean  @default(false)
+  timeSpent    Int?
+  dropoffPoint String?
+  metadata     String?
+  createdAt    DateTime @default(now())
+  user         User?    @relation(fields: [userId], references: [id])
+}
+
+model UserSegment {
+  id           String   @id @default(cuid())
+  userId       String
+  segmentName  String
+  segmentValue String
+  confidence   Float?
+  metadata     String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model RealtimeMetric {
+  id         String   @id @default(cuid())
+  userId     String?
+  metricName String
+  value      Float
+  timestamp  DateTime @default(now())
+  metadata   String?
+  user       User?    @relation(fields: [userId], references: [id])
+}
+
+model BatchAnalytic {
+  id          String   @id @default(cuid())
+  userId      String?
+  batchId     String
+  eventType   String
+  eventData   String
+  processed   Boolean  @default(false)
+  processedAt DateTime?
+  createdAt   DateTime @default(now())
+  user        User?    @relation(fields: [userId], references: [id])
+}
+
+model StaticPage {
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  isPublished   Boolean  @default(true)
+  order         Int?
+  level         Int      @default(1)
+  parentId      String?
+  metaTitle     String?
+  metaDescription String?
+  allowComments Boolean  @default(false)
+  showInNavigation Boolean @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  parent        StaticPage?  @relation("PageHierarchy", fields: [parentId], references: [id])
+  children      StaticPage[] @relation("PageHierarchy")
+  translations  StaticPageTranslation[]
+  tags          StaticPageTag[]
+
+  @@map("StaticPage")
+}
+
+model StaticPageTranslation {
+  id        String   @id @default(cuid())
+  pageId    String
+  language  String   // 'UA', 'EN', 'RU'
+  title     String
+  content   String
+  excerpt   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  page      StaticPage @relation(fields: [pageId], references: [id], onDelete: Cascade)
+
+  @@unique([pageId, language])
+  @@map("StaticPageTranslation")
+}
+
+model StaticPageTag {
+  id     String @id @default(cuid())
+  pageId String
+  tagId  String
+
+  // Relations
+  page StaticPage @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  tag  Tag        @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@unique([pageId, tagId])
+  @@map("StaticPageTag")
+}
+
+model Tag {
+  id       String   @id @default(cuid())
+  nameUa   String   @unique
+  nameEn   String?
+  color    String   @default("#3B82F6")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  staticPages StaticPageTag[]
+
+  @@map("Tag")
+}
+
+
+model UserFlow {
+  id          String         @id @default(cuid())
+  name        String
+  description String?
+  createdBy   String
+  isActive    Boolean        @default(true)
+  metadata    String?
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  creator     User           @relation(fields: [createdBy], references: [id])
+  nodes       UserFlowNode[]
+}
+
+model UserFlowNode {
+  id         String   @id @default(cuid())
+  flowId     String
+  userId     String
+  nodeName   String
+  completed  Boolean  @default(false)
+  timeSpent  Int?
+  metadata   String?
+  createdAt  DateTime @default(now())
+  flow       UserFlow @relation(fields: [flowId], references: [id], onDelete: Cascade)
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model TestSession {
+  id                String               @id @default(cuid())
+  testId            String
+  userId            String
+  status            String               @default("in_progress")
+  startedAt         DateTime             @default(now())
+  completedAt       DateTime?
+  timeSpent         Int?
+  currentQuestionId String?
+  metadata          String?
+  test              Test                 @relation(fields: [testId], references: [id], onDelete: Cascade)
+  user              User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+  answers           TestAnswer[]
+  result            TestResult?
+  adaptiveResults   AdaptiveTestResult[]
+}
+
+model Test {
+  id                   String               @id @default(cuid())
+  title                String
+  description          String?
+  category             String?
+  difficulty           String               @default("medium")
+  timeLimit            Int?
+  passingScore         Int                  @default(70)
+  totalQuestions       Int                  @default(0)
+  isPublished          Boolean              @default(false)
+  isAdaptive           Boolean              @default(false)
+  instructions         String?
+  allowReview          Boolean              @default(true)
+  shuffleQuestions     Boolean              @default(false)
+  maxAttempts          Int?
+  tags                 String?
+  createdAt            DateTime             @default(now())
+  updatedAt            DateTime             @updatedAt
+  questions            TestQuestion[]
+  sessions             TestSession[]
+  results              TestResult[]
+  adaptiveTestResults  AdaptiveTestResult[]
+}
+
+model TestQuestion {
+  id              String       @id @default(cuid())
+  testId          String
+  question        String
+  type            String       @default("multiple_choice")
+  options         String?
+  correctAnswer   String
+  explanation     String?
+  points          Int          @default(1)
+  difficulty      Int          @default(2)
+  orderIndex      Int          @default(0)
+  imageUrl        String?
+  competencyArea  String?
+  subCompetency   String?
+  metadata        String?
+  test            Test         @relation(fields: [testId], references: [id], onDelete: Cascade)
+  answers         TestAnswer[]
+}
+
+model TestAnswer {
+  id            String       @id @default(cuid())
+  sessionId     String
+  questionId    String
+  userId        String
+  answer        String
+  isCorrect     Boolean
+  timeSpent     Int?
+  confidence    Int?
+  createdAt     DateTime     @default(now())
+  session       TestSession  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  question      TestQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  user          User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model TestResult {
+  id                   String                @id @default(cuid())
+  sessionId            String                @unique
+  userId               String
+  testId               String
+  score                Float
+  percentage           Float
+  passed               Boolean
+  correctAnswers       Int
+  totalQuestions       Int
+  timeSpent            Int?
+  feedback             String?
+  certificate          String?
+  metadata             String?
+  createdAt            DateTime              @default(now())
+  session              TestSession           @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  user                 User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  test                 Test                  @relation(fields: [testId], references: [id], onDelete: Cascade)
+  questionnaireProfile QuestionnaireProfile?
+}
+
+model AdaptiveTestResult {
+  id                String      @id @default(cuid())
+  sessionId         String
+  userId            String
+  testId            String
+  finalAbilityScore Float
+  standardError     Float?
+  itemsAdministered Int
+  convergenceReason String?
+  competencyScores  String?
+  performanceLevel  String?
+  recommendations   String?
+  metadata          String?
+  createdAt         DateTime    @default(now())
+  session           TestSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  user              User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  test              Test        @relation(fields: [testId], references: [id], onDelete: Cascade)
+}
+
+model Motorcycle {
+  id                String   @id @default(cuid())
+  brand             String   // Yamaha, Honda, KTM, etc.
+  model             String   // MT-07, CBR600RR, etc.
+  fullName          String   // Full searchable name "Yamaha MT-07"
+  type              String   // naked, sport, adventure, cruiser, touring, supermoto, classic
+  engineSize        Int      // Engine displacement in CC
+  year              Int?     // Year of manufacture (optional)
+  hasABS            Boolean  @default(false)
+  difficultyLevel   String   // beginner, intermediate, advanced, expert
+  riskCategory      String   // low, medium, high
+  beginnerFriendly  Boolean  @default(false)
+  popularityRank    Int      @default(0) // For sorting popular models
+  metadata          Json?    // Additional specs, features
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  @@index([brand])
+  @@index([type])
+  @@index([beginnerFriendly])
+  @@index([fullName])
+}
+
+model QuestionnaireProfile {
+  id                String   @id @default(cuid())
+  userId            String   
+  testResultId      String?  @unique
+  type              String?  // 'beginner' or 'experienced'
+  answers           Json?    // JSON with all answers
+  profileType       String   // BEGINNER_CAREFUL, BEGINNER_FAST, BEGINNER_ROMANTIC, etc.
+  riskScore         Float?   // 1-10
+  confidenceScore   Float?   // 1-10
+  safetyScore       Float?   // 0-100
+  skillsScore       Float?   // 0-100
+  knowledgeScore    Float?   // 0-100
+  psychologyScore   Float?   // 0-100
+  riskAwareness     Float?   // 0-100
+  overallLevel      String?  // beginner, intermediate, advanced, expert
+  riskProfile       String?  // low, moderate, high, critical
+  redFlags          Json?    // Array of detected red flags
+  recommendations   Json?    // Personalized recommendations
+  segmentData       Json?    // Marketing segment data
+  motorcycleId      String?  // Selected motorcycle
+  timePerQuestion   Json?    // Time spent on each question
+  completionTime    Int?     // Total time in seconds
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  testResult        TestResult? @relation(fields: [testResultId], references: [id], onDelete: Cascade)
+  
+  @@index([userId])
+  @@index([type])
+  @@index([profileType])
+  @@index([riskProfile])
+}
+
+// Waitlist for newsletter signups
+model Waitlist {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  phone     String?
+  interests String?  // JSON array of interests
+  source    String?  // where they signed up from
+  createdAt DateTime @default(now())
+  
+  @@index([email])
+  @@index([source])
+}

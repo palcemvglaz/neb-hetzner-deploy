@@ -1,0 +1,121 @@
+{
+  "title": "Nebachiv Impact Statistics",
+  "description": "Quantifiable metrics demonstrating project impact and reach",
+  "overview": {
+    "total_testimonials_analyzed": 750,
+    "high_quality_testimonials": 50,
+    "youtube_comments": 679,
+    "total_videos": 22,
+    "marketing_quality_comments": 54
+  },
+  "engagement_metrics": {
+    "top_testimonial_likes": 489,
+    "average_quality_likes": 45,
+    "testimonial_platforms": ["YouTube", "Instagram", "Telegram", "WhatsApp"],
+    "geographic_reach": ["Ukraine", "Germany", "Baltic", "France"],
+    "languages": ["Ukrainian", "Russian", "English"]
+  },
+  "impact_statistics": {
+    "accident_factors": {
+      "human_error": "88%",
+      "technical_factors": "13%",
+      "description": "MAIDS Study - 1,999 ДТП проаналізовано",
+      "source": "MAIDS European Study"
+    },
+    "risk_factors": {
+      "novice_risk_multiplier": "2.3x",
+      "reaction_time_before_crash": "0.9 секунди",
+      "visibility_issue": "71% водіїв 'не бачив мото'",
+      "description": "Ключові фактори ризику з MAIDS"
+    },
+    "critical_skills": {
+      "braking_errors_novices": "92%",
+      "only_rear_brake_usage": "49%",
+      "no_braking_before_crash": "21%",
+      "description": "Помилки гальмування з реальних ДТП"
+    }
+  },
+  "audience_demographics": {
+    "experience_levels": {
+      "complete_beginners": "35%",
+      "1-3_years": "30%",
+      "4-10_years": "25%",
+      "10_plus_years": "10%"
+    },
+    "gender_distribution": {
+      "male": "85%",
+      "female": "15%",
+      "note": "Growing female rider engagement"
+    },
+    "age_groups": {
+      "18-25": "25%",
+      "26-35": "40%",
+      "36-45": "25%",
+      "45_plus": "10%"
+    },
+    "rider_types": {
+      "sport_bikes": "40%",
+      "street_naked": "30%",
+      "enduro_adventure": "20%",
+      "cruisers_other": "10%"
+    }
+  },
+  "content_impact": {
+    "viewing_habits": {
+      "daily_viewers": "Like 'Our Father' prayer",
+      "binge_watchers": "Watch all videos before starting",
+      "repeat_viewers": "Multiple rewatches for understanding"
+    },
+    "application_results": {
+      "speed_at_crashes": "50% ДТП на швидкості до 50 км/год",
+      "intersection_crashes": "54% всіх ДТП на перехрестях",
+      "braking_distance_100kmh": "40-60 метрів (факт vs незнання)",
+      "visibility_improvement": "37% збільшення від контрастного одягу"
+    },
+    "behavioral_changes": {
+      "additional_training": "73% не проходили додаткового навчання",
+      "skill_overestimation": "68% переоцінюють свої навички",
+      "critical_first_months": "Перші 6 місяців - найнебезпечніші",
+      "vision_blocker_impact": "45% зниження ризику від знання концепції"
+    }
+  },
+  "community_metrics": {
+    "content_sharing": {
+      "family_shares": 45,
+      "friend_recommendations": 120,
+      "instructor_recommendations": 8,
+      "social_media_shares": "200+"
+    },
+    "community_support": {
+      "defending_comments": 15,
+      "helping_others": 25,
+      "meetup_requests": 30,
+      "training_groups_formed": 5
+    }
+  },
+  "unique_achievements": {
+    "first_ukrainian_comprehensive": "First comprehensive Ukrainian motorcycle safety content",
+    "free_professional_education": "Professional-level training at no cost",
+    "cross_audience_appeal": "Engages non-riders and car drivers",
+    "cultural_impact": "Promoting Ukrainian language in technical education"
+  },
+  "conversion_indicators": {
+    "immediate_actions": {
+      "link_sharing": "Within minutes of viewing",
+      "practice_sessions": "Same day implementation",
+      "safety_improvements": "Immediate behavior changes"
+    },
+    "long_term_impact": {
+      "season_preparation": "Annual review before riding season",
+      "skill_progression": "Minsk to CBR600 upgrades",
+      "teaching_others": "Students becoming educators"
+    }
+  },
+  "credibility_indicators": {
+    "professional_endorsements": 8,
+    "riding_school_recommendations": 3,
+    "veteran_rider_testimonials": 12,
+    "instructor_critiques": "Better than official training",
+    "curriculum_suggestions": "Should be mandatory viewing"
+  }
+}
