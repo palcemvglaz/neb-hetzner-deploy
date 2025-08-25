@@ -1,0 +1,90 @@
+{
+  "test": {
+    "title": "Тест компетенцій мотоцикліста V2.0 (Адаптивний)",
+    "description": "Адаптивний тест з 47 питань для оцінки компетенцій мотоциклістів. Включає психологічний профіль ПСКП.",
+    "type": "COMPETENCY_V2",
+    "isAdaptive": true,
+    "totalQuestions": 47,
+    "minQuestions": 15,
+    "maxQuestions": 47
+  },
+  "blocks": [
+    {
+      "id": "block_0",
+      "name": "БЛОК 0: ІДЕНТИФІКАЦІЯ",
+      "questions": 3
+    },
+    {
+      "id": "block_1", 
+      "name": "БЛОК 1: МОТИВАЦІЯ ТА ІСТОРІЯ",
+      "questions": 4
+    },
+    {
+      "id": "block_2",
+      "name": "БЛОК 2: САМООЦІНКА ТА ДОСВІД",
+      "questions": 6
+    },
+    {
+      "id": "block_3",
+      "name": "БЛОК 3: ПСИХОЛОГІЯ ТА РИЗИКИ",
+      "questions": 3
+    },
+    {
+      "id": "block_4",
+      "name": "БЛОК 4: МІСЬКА СТРАТЕГІЯ",
+      "questions": 3
+    },
+    {
+      "id": "block_5",
+      "name": "БЛОК 5: МІЖРЯДДЯ",
+      "questions": 4
+    },
+    {
+      "id": "block_6",
+      "name": "БЛОК 6: ШВИДКІСТЬ ТА ГАЛЬМУВАННЯ",
+      "questions": 8
+    },
+    {
+      "id": "block_7",
+      "name": "БЛОК 7: ПОВОРОТИ ТА МАНЕВРИ",
+      "questions": 7
+    },
+    {
+      "id": "block_8",
+      "name": "БЛОК 8: СОЦІАЛЬНІ АСПЕКТИ",
+      "questions": 7
+    },
+    {
+      "id": "block_9",
+      "name": "БЛОК 9: ТЕХНІЧНІ ТА НАВЧАЛЬНІ",
+      "questions": 5
+    }
+  ],
+  "hubQuestions": [
+    "q1_4",
+    "q2_4", 
+    "q3_3",
+    "q5_1",
+    "q7_3"
+  ],
+  "showConditions": {
+    "experience_based": {
+      "1_season": {
+        "skip": ["q5_2", "q5_3", "q5_4", "q7_3", "q7_4", "q7_5", "q7_6", "q7_7"]
+      },
+      "2_3_seasons": {
+        "skip": ["q5_4", "q7_5", "q7_6", "q7_7"]
+      }
+    },
+    "training_based": {
+      "no_training": {
+        "skip": ["q6_3", "q6_4", "q6_5", "q7_5", "q7_6"]
+      }
+    },
+    "lane_splitting": {
+      "afraid": {
+        "skip": ["q5_2", "q5_3", "q5_4"]
+      }
+    }
+  }
+}
