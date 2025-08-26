@@ -1,5 +1,5 @@
 import Stripe from 'stripe'
-import { prisma } from '@/lib/prisma'
+import { prisma } from '@/lib/db/prisma'
 import { notificationService } from '@/lib/communication/notification-service'
 
 // Initialize Stripe

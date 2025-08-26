@@ -1,4 +1,4 @@
-import { prisma } from '@/lib/prisma'
+import { prisma } from '@/lib/db/prisma'
 import { Test, Question, TestSession, TestAnswer, Prisma } from '@prisma/client'
 
 export interface QuizQuestion {

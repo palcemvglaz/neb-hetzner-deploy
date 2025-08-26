@@ -27,3 +27,6 @@ export const updateSkillProgress = (userId: string, skillId: string, progress: n
   // Update skill progress logic
   return true
 }
+
+// Export SKILLS_DATABASE for backward compatibility
+export const SKILLS_DATABASE = skillsTree
