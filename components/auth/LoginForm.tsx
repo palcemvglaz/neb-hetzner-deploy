@@ -124,7 +124,7 @@ export default function LoginForm() {
               type="checkbox"
               className="h-4 w-4 text-nebachiv-600 focus:ring-nebachiv-500 border-gray-300 rounded"
             />
-            <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-300">
+            <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-200">
               Запам'ятати мене
             </label>
           </div>
