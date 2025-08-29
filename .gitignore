@@ -1,6 +1,53 @@
+# Dependencies
 node_modules/
-.next/
-.env.local
-.env.production
-*.log
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
+
+# Misc
 .DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Media files (large files excluded from Git)
+public/videos_bg/
+public/marketing_data/photos*/
+public/marketing_data/*.mov
+public/marketing_data/*.mp4
+
+# But allow small logos
+!public/marketing_data/logos/*.png
+!public/marketing_data/logos/*.jpg
+!public/marketing_data/Logos/*.png
+
+# Allow essential files
+!public/icon.svg
+!public/manifest.json
+!public/sw.js

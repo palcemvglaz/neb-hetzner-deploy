@@ -1,0 +1,10 @@
+public/icon.svg
+public/manifest.json
+public/sw.js
+public/videos_bg/hero-background.mp4
+public/marketing_data/logos/palcemvglaz_dark_ninja_buddha_wearing_ICON_motorcycle_helmet_si_bf7c9345-ed92-4730-b9aa-d957aeee424e.png
+public/marketing_data/logos/palcemvglaz_httpss.mj.png
+public/marketing_data/photos good for promo site/IMG_5806.png
+public/marketing_data/photos good for promo site/IMG_0963.png
+public/marketing_data/photos good for promo site/IMG_7735.png
+public/marketing_data/Logos/ChatGPT Image Jun 27, 2025, 03_44_06 PM.png

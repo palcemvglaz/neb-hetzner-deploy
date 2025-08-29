@@ -6,7 +6,7 @@
 set -e
 
 PROJECTS_DIR="./projects"
-PROJECT_INDEX="$PROJECTS_DIR/PROJECT_INDEX.md"
+PROJECT_INDEX="$PROJECTS_DIR/project-index.json"
 
 # Colors for output
 RED='\033[0;31m'
@@ -21,12 +21,18 @@ log_info() { echo -e "${BLUE}ℹ️  $1${NC}"; }
 log_success() { echo -e "${GREEN}✅ $1${NC}"; }
 log_warning() { echo -e "${YELLOW}⚠️  $1${NC}"; }
 log_error() { echo -e "${RED}❌ $1${NC}"; }
+log_header() { echo -e "${PURPLE}═══════════════════════════════════════${NC}"; }
 
 # Ensure projects directory exists
 ensure_projects_dir() {
     if [[ ! -d "$PROJECTS_DIR" ]]; then
         mkdir -p "$PROJECTS_DIR"
         log_info "Created projects directory"
+    fi
+    
+    if [[ ! -f "$PROJECT_INDEX" ]]; then
+        echo "[]" > "$PROJECT_INDEX"
+        log_info "Initialized project index"
     fi
 }
 
